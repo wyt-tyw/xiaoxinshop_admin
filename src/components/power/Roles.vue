@@ -313,13 +313,13 @@ export default {
         );
 
         if (res.meta.status !== 200) {
-          return this.$message.error("更新用户信息失败！");
+          return this.$message.error("更新角色信息失败！");
         }
         // 关闭对话框
         this.editDialogVisible = false;
         // 刷新数据列表
         this.getRolesList();
-        this.$message.success("更新用户信息成功！");
+        this.$message.success("更新角色信息成功！");
       });
     },
 
