@@ -31,7 +31,12 @@ import {
     Cascader,
     Alert,
     Tabs,
-    TabPane
+    TabPane,
+    Steps,
+    Step,
+    CheckboxGroup,
+    Checkbox,
+    Upload
 } from 'element-ui'
 
 
@@ -65,6 +70,11 @@ Vue.use(Cascader)
 Vue.use(Alert)
 Vue.use(Tabs)
 Vue.use(TabPane)
+Vue.use(Steps)
+Vue.use(Step)
+Vue.use(CheckboxGroup)
+Vue.use(Checkbox)
+Vue.use(Upload)
 //把弹框组件挂载到了vue的原型对象上，这样每一个组件都可以直接通过this访问到$message，进行弹框提示
 Vue.prototype.$message = Message
 Vue.prototype.$confirm = MessageBox.confirm
