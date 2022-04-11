@@ -3,7 +3,7 @@
     <div class="login_box">
       <!-- 头像区域 -->
       <div class="avatar_box">
-        <img src="../assets/logo.png" alt="" />
+        <img src="../assets/xiaoxin.jpg" alt="" />
       </div>
       <!-- 登录表单区域 -->
       <el-form
@@ -45,8 +45,8 @@ export default {
     return {
       //这是登录表单的数据绑定对象
       loginForm: {
-        username: "",
-        password: "",
+        username: "admin",
+        password: "123456",
       },
       //这是表单的验证规则对象
       loginFormRules: {
@@ -103,7 +103,8 @@ export default {
 //lang="less"表示这一节点中支持less语法格式
 //scoped是vue指令,用来控制组件样式生效的区间,表示只在当前组件内生效
 .login_container {
-  background-color: #2b4b6b;
+  // 背景颜色渐变
+  background:linear-gradient(to right,#e7dbf4,#9e48f5);
   height: 100%;
 }
 

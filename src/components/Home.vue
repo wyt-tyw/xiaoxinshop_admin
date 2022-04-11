@@ -3,10 +3,10 @@
     <!-- 头部区域 -->
     <el-header>
       <div>
-        <img src="../assets/heima.png" alt="" />
-        <span>电商后台管理系统</span>
+        <img class="logo" src="../assets/xiaoxin.jpg" alt="" />
+        <span>小新商城后台管理系统</span>
       </div>
-      <el-button type="info" @click="logout">退出</el-button>
+      <el-button type="primary" @click="logout">退出</el-button>
     </el-header>
     <!-- 页面主题区域 -->
     <el-container>
@@ -16,9 +16,7 @@
         <div class="toggle-button" @click="toggleCollapse">|||</div>
         <!-- 侧边栏菜单 :unique-opened="true"实现了一次只能展开一个主菜单项 -->
         <el-menu
-          background-color="#333744"
-          text-color="#fff"
-          active-text-color="#409EFF"
+          background-color="#fcfdfe"
           :unique-opened="true"
           :collapse="isCollapse"
           :collapse-transition="false"
@@ -119,12 +117,13 @@ export default {
   height: 100%;
 }
 .el-header {
-  background-color: #373d41;
+  background-color:#fcfdfe;
   display: flex;
   justify-content: space-between; //左右贴边对齐
   padding-left: 0; //图标的左padding去掉
   align-items: center; //按钮纵向居中
-  color: #fff;
+  font-weight: 700;
+  color: #409EFF;;
   font-size: 20px;
   > div {
     display: flex;
@@ -135,9 +134,10 @@ export default {
   }
 }
 .el-aside {
-  background-color: #333744;
   .el-menu {
     border-right: 0; //优化子菜单右侧与主菜单对不齐的效果
+    font-weight: 550;
+    
   }
 }
 .el-main {
@@ -148,12 +148,18 @@ export default {
 }
 
 .toggle-button {
-  background-color: #4a5064;
+  // background-color: #4a5064;
   font-size: 10px;
   line-height: 24px;
-  color: #fff;
+  color: #409EFF;;
   text-align: center;
   letter-spacing: 0.2em;
   cursor: pointer; //鼠标放上去的时候变成小手
+}
+
+.logo {
+    width: 61px;
+    height: 56px;
+    border-radius: 50%;
 }
 </style>

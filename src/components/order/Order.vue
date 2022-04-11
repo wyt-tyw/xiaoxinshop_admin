@@ -45,11 +45,18 @@
               icon="el-icon-edit"
               @click="showBox"
             ></el-button>
+            <el-tooltip
+              effect="dark"
+              content="物流进度"
+              placement="top-start"
+              :enterable="false"
+            >
             <el-button
               type="success"
               icon="el-icon-location"
               @click="showProgressBox"
             ></el-button>
+            </el-tooltip>
           </template>
         </el-table-column>
       </el-table>
