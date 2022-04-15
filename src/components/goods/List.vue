@@ -163,6 +163,18 @@ export default {
       this.$router.push('/goods/add')
     }
   },
+  computed: {
+    //searchText返回搜索框中输入的值
+    searchText() {
+      return this.queryInfo.query;
+    }
+  },
+  //用watch监听searchText,改变时就调用getGoodsList(),实现动态搜索
+  watch: {
+    searchText: function() {
+      this.getGoodsList();
+    }
+  }
 };
 </script>
  

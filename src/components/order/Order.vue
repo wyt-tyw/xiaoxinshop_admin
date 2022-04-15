@@ -10,7 +10,12 @@
       <!-- 搜索框 -->
       <el-row>
         <el-col :span="8">
-          <el-input placeholder="请输入内容" clearable @clear="getOrdersList">
+          <el-input
+            placeholder="请输入内容"
+            v-model="queryInfo.query"
+            clearable
+            @clear="getOrdersList"
+          >
             <el-button
               slot="append"
               icon="el-icon-search"
@@ -39,7 +44,7 @@
           </template>
         </el-table-column>
         <el-table-column label="操作">
-          <template slot-scope="scope">
+          <template>
             <el-button
               type="primary"
               icon="el-icon-edit"
@@ -51,11 +56,11 @@
               placement="top-start"
               :enterable="false"
             >
-            <el-button
-              type="success"
-              icon="el-icon-location"
-              @click="showProgressBox"
-            ></el-button>
+              <el-button
+                type="success"
+                icon="el-icon-location"
+                @click="showProgressBox"
+              ></el-button>
             </el-tooltip>
           </template>
         </el-table-column>
@@ -109,7 +114,7 @@
 
     <!-- 展示物流进度的对话框 -->
     <el-dialog title="物流进度" :visible.sync="progressVisible" width="50%">
-        <!-- 时间线 -->
+      <!-- 时间线 -->
       <el-timeline>
         <el-timeline-item
           v-for="(activity, index) in progressInfo"
@@ -265,7 +270,7 @@ export default {
 
     //展示物流进度的对话框
     showProgressBox() {
-        this.progressVisible = true;
+      this.progressVisible = true;
     },
   },
 };

@@ -104,7 +104,7 @@ export default {
 //scoped是vue指令,用来控制组件样式生效的区间,表示只在当前组件内生效
 .login_container {
   // 背景颜色渐变
-  background:linear-gradient(to right,#e7dbf4,#9e48f5);
+  background:linear-gradient(to right,#e7dbf4,#7637b5);
   height: 100%;
 }
 
