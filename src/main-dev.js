@@ -30,23 +30,25 @@ Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
 
-Vue.component('tree-table',TreeTable)
+Vue.component('tree-table', TreeTable)
 //将富文本编辑器，注册为全局可用的组件
 Vue.use(VueQuillEditor)
 
 //全局定义格式化时间过滤器
-Vue.filter('dateFormat',function(originVal){
+Vue.filter('dateFormat', function (originVal) {
+  //乘以1000解决了时间1970年的问题！！
+  originVal = originVal * 1000;
   const dt = new Date(originVal);
   const y = dt.getFullYear();
-  const m = (dt.getMonth() + 1 + '').padStart(2,'0');
-  const d = (dt.getDate() + '').padStart(2,'0');
-  const hh  = (dt.getHours() + '').padStart(2,'0');
-  const mm  = (dt.getMinutes() + '').padStart(2,'0');
-  const ss  = (dt.getSeconds() + '').padStart(2,'0');
+  const m = (dt.getMonth() + 1 + '').padStart(2, '0');
+  const d = (dt.getDate() + '').padStart(2, '0');
+  const hh = (dt.getHours() + '').padStart(2, '0');
+  const mm = (dt.getMinutes() + '').padStart(2, '0');
+  const ss = (dt.getSeconds() + '').padStart(2, '0');
   return `${y}-${m}-${d} ${hh}:${mm}:${ss}`;
 })
 
 new Vue({
-  router,   
+  router,
   render: h => h(App)   //通过render函数把App根组件渲染到了页面上
 }).$mount('#app')
